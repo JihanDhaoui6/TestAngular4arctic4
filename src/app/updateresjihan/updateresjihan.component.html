@@ -1,0 +1,22 @@
+<h2>Modifier Résidence</h2>
+<form [formGroup]="residenceForm" (ngSubmit)="updateResidence()">
+  <label>Nom :</label>
+  <input formControlName="name">
+  <br><br>
+  
+  <label>Adresse :</label>
+  <input formControlName="address">
+  <br><br>
+  
+  <label>Status :</label>
+  <input formControlName="status">
+  <br><br>
+  
+  <label>Image URL :</label>
+  <input formControlName="image">
+  <br><br>
+  
+  <button type="submit" [disabled]="!residenceForm.valid">Mettre à jour</button>
+</form>
+
+<a routerLink="/list">Retour Liste</a>

@@ -1,0 +1,10 @@
+<h2>Détails de la résidence</h2>
+<div *ngIf="residence">
+  <img [src]="residence.image ? residence.image : 'https://via.placeholder.com/200'" width="200">
+  <h3>{{residence.name}}</h3>
+  <p>Adresse : {{residence.address}}</p>
+  <p>Status : {{residence.status}}</p>
+  <p>Créé : {{residence.created_at | date:'short'}}</p>
+  <p>Modifié : {{residence.updated_at | date:'short'}}</p>
+</div>
+<a routerLink="/list">Retour Liste</a>

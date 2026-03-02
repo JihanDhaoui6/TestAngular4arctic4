@@ -1,0 +1,20 @@
+<h2>Liste des résidences</h2>
+
+<div class="cards-container">
+  <div class="card" *ngFor="let res of residences">
+    <img [src]="res.image ? res.image : 'https://via.placeholder.com/200'" width="200">
+    <h3>{{res.name}}</h3>
+    <p>{{res.address}}</p>
+    <p>Status: {{res.status}}</p>
+    <p>Créé: {{res.created_at | date:'short'}}</p>
+    <p>Modifié: {{res.updated_at | date:'short'}}</p>
+
+    <div class="card-buttons">
+      <button (click)="viewDetails(res.id)">Détails</button>
+      <button (click)="updateResidence(res.id)">Modifier</button>
+      <button (click)="deleteResidence(res.id)">Supprimer</button>
+    </div>
+  </div>
+</div>
+
+<a routerLink="/add">Ajouter Résidence</a>
